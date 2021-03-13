@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace demoNetCore.Models
 {
-    public class ICShopContext:DbContext
+    public class ProjectManagementContext:DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data Source=LAB-B06\SQL2017;Initial Catalog=PROJECTMANAGEMENT;User ID=sa;Password=***********"); //connectionString
+            optionsBuilder.UseSqlServer("Data Source=LAB-B06\\SQL2017;Initial Catalog=PROJECTMANAGEMENT;User ID=sa;Password=123456"); //connectionString
         }
-        public DbSet<REGISTER> REGISTERs { get; set; }
-        public DbSet<BOOK> BOOKS { get; set; }
+
+        public DbSet<employee> employees { get; set; }
 
     }
 }

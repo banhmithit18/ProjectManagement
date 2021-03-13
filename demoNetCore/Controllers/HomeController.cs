@@ -20,8 +20,10 @@ namespace demoNetCore.Controllers
 
         public IActionResult Index()
         {
-            ICShopContext ic = new ICShopContext();
-            var q = ic.REGISTERs.ToList();
+            using (var context = new ProjectManagementContext())
+            {
+                var employees = context.employees.ToList();
+            }
             return View();
         }
 
